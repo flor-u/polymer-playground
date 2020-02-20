@@ -6,24 +6,25 @@
     body {
       background: #fafafa;
     }
+    #demo{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      align-content: space-between;
+    }
+
   </style>
 </head>
 <body>
-  <div id="demo"></div>
-
-  <script type="module">
-    import { html, render } from 'lit-html';
-    import '../polymer-playground.js';
-
-    const title = 'Hello owc World!';
-    render(
-      html`
-        <polymer-playground .title=${title}>
-          some more light-dom
-        </polymer-playground>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
+  <div id="demo">
+  <play-ground src='https://i.pinimg.com/originals/4b/99/1a/4b991a18a070d4d84dd77408ac92c074.jpg' title='One'> </play-ground>
+  <play-ground src='https://previews.123rf.com/images/pskov/pskov1611/pskov161100073/67585531-seamless-geometric-vintage-pattern-in-retro-80s-style-on-the-red-background-memphis-style-can-be-use.jpg' title='Two'></play-ground> </play-ground>
+  <play-ground src='https://i.pinimg.com/originals/c4/92/ba/c492baf54af3024902ae3cc570f2aaf3.jpg' title='Four'></play-ground> </play-ground>
+  <play-ground src='https://st2.depositphotos.com/1005738/7507/v/450/depositphotos_75074627-stock-illustration-retro-80s-seamless-pattern-background.jpg' title='Five'></play-ground> </play-ground>
+  <play-ground src='https://previews.123rf.com/images/dolva/dolva1512/dolva151200008/50015551-seamless-abstract-geometric-pattern-fashion-80s-90s-it-can-be-used-in-printing-website-background-an.jpg' title='Three'></play-ground> </play-ground>
+  <play-ground src='https://previews.123rf.com/images/belopoppa/belopoppa1602/belopoppa160200386/51976206-seamless-vintage-abstract-pattern-with-triangles-in-the-style-of-80-s-fashion-background-in-memphis-.jpg' title='Six'></play-ground> </play-ground>
+</div>
+  <script type="module" src='../src/PlayGround.js'></script>
 </body>
 </html>

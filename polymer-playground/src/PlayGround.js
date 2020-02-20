@@ -1,39 +1,46 @@
-import { html, css, LitElement } from 'lit-element';
+import {  PolymerElement, html} from '@polymer/polymer';
 
-export class PlayGround extends LitElement {
-  static get styles() {
-    return css`
-      :host {
-        --polymer-playground-text-color: #000;
+export default class PlayGround extends PolymerElement {
+  static template = html `
+  <style>
+    :host{
+      display: flex;
+      color: black;
+      font-family: monospace;
+      border: 4px solid black;
+      width:400px;
+      margin-bottom: 30px;
+    }
+    
+    img{
+      max-width: 400px;
+    }
+    .info{
+      padding: 20px
+    }
+  </style>
 
-        display: block;
-        padding: 25px;
-        color: var(--polymer-playground-text-color);
-      }
-    `;
-  }
+  <div>
+  <img src=[[src]]>
+  <div class='info'>
+  <h3>Background [[title]]</h3>
+  <p>[[text]]</p>
+</div>
+</div>`
 
-  static get properties() {
-    return {
-      title: { type: String },
-      counter: { type: Number },
-    };
-  }
-
-  constructor() {
-    super();
-    this.title = 'Hey there';
-    this.counter = 5;
-  }
-
-  __increment() {
-    this.counter += 1;
-  }
-
-  render() {
-    return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
-    `;
+static get properties(){
+  return{
+    src:{
+      type: String,
+      value: 'image-source'
+    },
+    title:{type: String,
+      value: 'number'},
+    text:{type: String,
+      value: 'description'}
   }
 }
+  
+}
+
+customElements.define('play-ground', PlayGround)
