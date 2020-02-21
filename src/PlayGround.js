@@ -10,6 +10,7 @@ export default class PlayGround extends PolymerElement {
         border: 4px solid black;
         width: 400px;
         margin-bottom: 30px;
+        background: var(--my-card-background, white);
       }
 
       img {
@@ -18,6 +19,10 @@ export default class PlayGround extends PolymerElement {
       .info {
         padding: 20px;
       }
+
+      :host([selected]) {
+        background: var(--my-card-background, yellow);
+      }
     </style>
 
     <div>
@@ -25,6 +30,7 @@ export default class PlayGround extends PolymerElement {
       <div class="info">
         <h3>Background [[title]]</h3>
         <p>[[text]]</p>
+        <input type="checkbox" onclick="_selectedCard" />
       </div>
     </div>
   `;
@@ -37,7 +43,16 @@ export default class PlayGround extends PolymerElement {
       },
       title: { type: String, value: 'number' },
       text: { type: String, value: 'description' },
+      selected: {
+        type: Boolean,
+        value: false,
+        reflectToAttribute: true,
+      },
     };
+  }
+
+  _selectedCard() {
+    this.selected = !this.selected;
   }
 }
 
