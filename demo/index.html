@@ -5,6 +5,10 @@
   <style>
     body {
       background: #fafafa;
+      margin:0;
+      padding:0;
+      font-family: monospace;
+      font-size: 16px;
     }
     #demo{
       display: flex;
@@ -17,6 +21,9 @@
   </style>
 </head>
 <body>
+  <header>
+    <nav-bar></nav-bar>
+  </header>
   <div id="demo">
   <play-ground src='https://i.pinimg.com/originals/4b/99/1a/4b991a18a070d4d84dd77408ac92c074.jpg' title='One'> </play-ground>
   <play-ground src='https://previews.123rf.com/images/pskov/pskov1611/pskov161100073/67585531-seamless-geometric-vintage-pattern-in-retro-80s-style-on-the-red-background-memphis-style-can-be-use.jpg' title='Two'></play-ground> </play-ground>
@@ -25,7 +32,12 @@
   <play-ground src='https://previews.123rf.com/images/dolva/dolva1512/dolva151200008/50015551-seamless-abstract-geometric-pattern-fashion-80s-90s-it-can-be-used-in-printing-website-background-an.jpg' title='Three'></play-ground> </play-ground>
   <play-ground src='https://previews.123rf.com/images/belopoppa/belopoppa1602/belopoppa160200386/51976206-seamless-vintage-abstract-pattern-with-triangles-in-the-style-of-80-s-fashion-background-in-memphis-.jpg' title='Six'></play-ground> </play-ground>
 </div>
-  <script type="module" src='../src/PlayGround.js'></script>
+<div>
+  <login-form></login-form>
+</div>
+<script type="module" src='../src/NavBar.js'></script>
+<script type="module" src='../src/PlayGround.js'></script>
+<script type="module" src='../src/LoginForm.js'></script>
 </body>
 </html>
 

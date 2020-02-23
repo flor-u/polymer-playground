@@ -1,7 +1,8 @@
 import { PolymerElement, html } from '@polymer/polymer';
 
 export default class PlayGround extends PolymerElement {
-  static template = html`
+  static get template (){
+    return html`
     <style>
       :host {
         display: flex;
@@ -16,6 +17,7 @@ export default class PlayGround extends PolymerElement {
       img {
         max-width: 400px;
       }
+
       .info {
         padding: 20px;
       }
@@ -33,7 +35,7 @@ export default class PlayGround extends PolymerElement {
         <input type="checkbox" onclick="_selectedCard" />
       </div>
     </div>
-  `;
+  `};
 
   static get properties() {
     return {
